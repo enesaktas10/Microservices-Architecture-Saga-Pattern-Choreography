@@ -20,7 +20,7 @@ namespace Stock.API.Consumers
             //collection = MongoDb de stock bilgilerini tuttugum Stock entitysinin bir instance ni olusturdum ve collection uzerinden bu bilgiye erisebiliyorum
             foreach (var orderItem in context.Message.OrderItems)
             {
-                stockResult.Add(await (await collection.FindAsync(s => s.ProductId == orderItem.ProductId && s.Count >= orderItem.Count)).AnyAsync());
+                stockResult.Add(await (await collection.FindAsync(s => s.ProductId == orderItem.ProductId.ToString() && s.Count >= (long)orderItem.Count)).AnyAsync());
             }
 
 
@@ -30,10 +30,10 @@ namespace Stock.API.Consumers
 
                 foreach (var orderItem in context.Message.OrderItems)
                 {
-                    Models.Stock stock =await (await collection.FindAsync(s => s.ProductId == orderItem.ProductId)).FirstOrDefaultAsync();
+                    Models.Stock stock =await (await collection.FindAsync(s => s.ProductId == orderItem.ProductId.ToString())).FirstOrDefaultAsync();
                     stock.Count -= orderItem.Count;
 
-                    await collection.FindOneAndReplaceAsync(x => x.ProductId == orderItem.ProductId, stock);
+                    await collection.FindOneAndReplaceAsync(x => x.ProductId == orderItem.ProductId.ToString(), stock);
 
                 }
 

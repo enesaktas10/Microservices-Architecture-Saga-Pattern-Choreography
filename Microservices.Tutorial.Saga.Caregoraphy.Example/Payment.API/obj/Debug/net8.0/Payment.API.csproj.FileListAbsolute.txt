@@ -31,3 +31,9 @@ C:\Users\enes\Desktop\EventualConsistecy-SagaPattern-Careography\Microservices.T
 C:\Users\enes\Desktop\EventualConsistecy-SagaPattern-Careography\Microservices.Tutorial.Saga.Caregoraphy.Example\Payment.API\obj\Debug\net8.0\Payment.API.pdb
 C:\Users\enes\Desktop\EventualConsistecy-SagaPattern-Careography\Microservices.Tutorial.Saga.Caregoraphy.Example\Payment.API\obj\Debug\net8.0\Payment.API.genruntimeconfig.cache
 C:\Users\enes\Desktop\EventualConsistecy-SagaPattern-Careography\Microservices.Tutorial.Saga.Caregoraphy.Example\Payment.API\obj\Debug\net8.0\ref\Payment.API.dll
+C:\Users\enes\Desktop\EventualConsistecy-SagaPattern-Careography\Microservices.Tutorial.Saga.Caregoraphy.Example\Payment.API\bin\Debug\net8.0\MassTransit.dll
+C:\Users\enes\Desktop\EventualConsistecy-SagaPattern-Careography\Microservices.Tutorial.Saga.Caregoraphy.Example\Payment.API\bin\Debug\net8.0\MassTransit.Abstractions.dll
+C:\Users\enes\Desktop\EventualConsistecy-SagaPattern-Careography\Microservices.Tutorial.Saga.Caregoraphy.Example\Payment.API\bin\Debug\net8.0\MassTransit.RabbitMqTransport.dll
+C:\Users\enes\Desktop\EventualConsistecy-SagaPattern-Careography\Microservices.Tutorial.Saga.Caregoraphy.Example\Payment.API\bin\Debug\net8.0\RabbitMQ.Client.dll
+C:\Users\enes\Desktop\EventualConsistecy-SagaPattern-Careography\Microservices.Tutorial.Saga.Caregoraphy.Example\Payment.API\bin\Debug\net8.0\Shared.dll
+C:\Users\enes\Desktop\EventualConsistecy-SagaPattern-Careography\Microservices.Tutorial.Saga.Caregoraphy.Example\Payment.API\bin\Debug\net8.0\Shared.pdb
