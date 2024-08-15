@@ -38,6 +38,15 @@ namespace Stock.API.Consumers
                 }
 
                 //paymenti uyaracak eventin firlatilmasi
+
+
+                //Daha oncesinde OrderCreatedEventte direk olarak bir publush islemi yaptik yani herhangi bir kuyruk ismi bildirmedik yayinlamis oldugumuz evente subscribe olanlarin hepsi kendi kuyruklarindan bu evente erisecekler ve gerekli islemleri yurutecekler.
+                //hedef odakli direk bir servisin kuyrugunada gonderebiliiz burada biz bunu yapacagiz
+
+                var sendEndpoint =   await sendEndpointProvider.GetSendEndpoint(new Uri($"queue:{RabbitMQSettings.Payment_StockReservedEventQueue}"));
+
+                
+
                 StockReservedEvent stockReservedEvent = new()
                 {
                     OrderId = context.Message.OrderId,
@@ -46,13 +55,7 @@ namespace Stock.API.Consumers
                     OrderItems = context.Message.OrderItems,
                 };
 
-                //Daha oncesinde OrderCreatedEventte direk olarak bir publush islemi yaptik yani herhangi bir kuyruk ismi bildirmedik yayinlamis oldugumuz evente subscribe olanlarin hepsi kendi kuyruklarindan bu evente erisecekler ve gerekli islemleri yurutecekler.
-                //hedef odakli direk bir servisin kuyrugunada gonderebiliiz burada biz bunu yapacagiz
-
-               var sendEndpoint = await sendEndpointProvider.GetSendEndpoint(
-                    new Uri($"queue: {RabbitMQSettings.Payment_StockReservedEventQueue}"));
-
-               sendEndpoint.Send(stockReservedEvent);
+                await sendEndpoint.Send(stockReservedEvent);
 
             }
             else
